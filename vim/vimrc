@@ -1,14 +1,51 @@
-set nu
-set cul
-set hlsearch
+
+"" 基本配置
+syntax on           " 语法高亮
+set showmode        " 显示当前模式
+set showcmd         " 显示键入指令
+set mouse=a         " 使用鼠标
+set encoding=utf-8  " 使用utf-9编码
+set t_Co=256        " 使用256色
+filetype indent on  " 文件类型检查 并 载入缩进规则
+
+"" 缩进
+set autoindent      " 回撤后 缩进保持一致
+set tabstop=4       " tab 显示的空格数
+set shiftwidth=4    " 缩进字符数
+set expandtab       " tab 自动转为空格
+set softtabstop=4   " tab 转为4个空格
+
+"" 外观
+set number          " 显示行号
+set relativenumber  " 其他行相对本行的行号
+set cursorline      " 高亮当前行
+set textwidth=80    " 行宽 显示80个字符
+set scrolloff=10    " 垂直滚动 光标距离顶/底部10行
+set laststatus=2    " 显示状态栏
+set ruler           " 状态栏显示光标位置
+
+"" 搜索
+set showmatch       " 高亮对应的括号
+set hlsearch        " 高亮匹配结果
+"set incsearch      " 自动跳至匹配结果
+set ignorecase      " 忽略大小写
+
+"" 编辑
+" set autodir       " 自动切换目录至当前文件路径
+
+"" 其他
+set clipboard=unnamed   " 复制至系统剪切板
 
 
-"python indent
-set filetype=python
-au BufNewFile,BufRead *.py,*.pyw setf python
-set autoindent " same level indent
-set smartindent " next level indent
-set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+"""""""""""
+"vim-plug
+"https://github.com/junegunn/vim-plug
+"""""""""""
+call plug#begin('~/.vim/autoload')
+
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+Plug 'airblade/vim-gitgutter'
+
+call plug#end()
+
